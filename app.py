@@ -96,7 +96,7 @@ def initialize_qa_chain():
         )
 
 def handle_chat_interaction():
-    user_input = st.text_input("Ask me something about the PDF content:", key="user_input")
+    user_input = st.text_input("Ask me something about the PDF content:", key="user_input", on_change=handle_chat_interaction)
     if user_input:
         response = st.session_state.qa_chain(user_input)
         
